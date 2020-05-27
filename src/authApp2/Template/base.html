@@ -1,0 +1,22 @@
+
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Accounts site</title>
+    My Acconts Site
+    {% if request.user.is_authenticated %}
+    <p>Hi {{request.user.username}}</p>
+    <a href="{% url 'logout' %}"> Logout </a>
+    {% else %}
+    <p>please register</p>
+    <a href="{% url 'register' %}"> Register </a>
+    or
+    <a href="{% url 'login' %}"> Login </a>
+    {% endif %}
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
